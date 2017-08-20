@@ -81,7 +81,7 @@ import StoreKit
         return UsageDataManager.shared.isRateDone
     }
 
-    public static var appID: Int?
+    public static var appId: String?
 
     private static var appVersion: String {
         get {
@@ -207,7 +207,7 @@ import StoreKit
         #if arch(i386) || arch(x86_64)
             print("APPIRATER NOTE: iTunes App Store is not supported on the iOS simulator. Unable to open App Store page.");
         #else
-            guard let appId = SwiftRater.appID,
+            guard let appId = SwiftRater.appId,
                   let url = URL(string: "https://itunes.apple.com/app/id\(appId)?action=write-review") else {
                     return
             }
